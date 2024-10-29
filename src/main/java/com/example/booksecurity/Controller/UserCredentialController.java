@@ -24,20 +24,24 @@ public class UserCredentialController {
         return userCredentialService.register(security);
     }
 
+    @GetMapping("/health")
+    public String health(){
+        return "Ok";
+    }
+
     @GetMapping("/validate/token")
     public boolean validateToken(@RequestParam String token){
         return userCredentialService.validateToken(token);
     }
     @PostMapping("/validate/user")
-    public String getToken (@RequestBody Security user){
+    public String getToken (@RequestBody Security users){
         Authentication authentication = authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(
-                        user.getUsername(),user.getPassword()
-                )
-        );
+                new UsernamePasswordAuthenticationToken(users.getUsername(), users.getPassword()));
+
         if(authentication.isAuthenticated()){
-            return userCredentialService.generateToken(user.getUsername());
+            return userCredentialService.generateToken(users.getUsername());
         }
         return "User not there";
+
     }
 }

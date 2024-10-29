@@ -3,8 +3,10 @@ package com.example.booksecurity.Service;
 import com.example.booksecurity.Entity.Security;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Service;
 
 import java.util.Collection;
+
 
 public class CustomUserDetails implements UserDetails {
 
