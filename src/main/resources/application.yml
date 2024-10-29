@@ -1,7 +1,7 @@
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/  # Adjust 'localhost' if the Eureka server is on another host
+      defaultZone: http://eurekabook-container:8761/eureka/  # Adjust 'localhost' if the Eureka server is on another host
 
 spring:
   application:

@@ -10,7 +10,7 @@ pipeline {
         stage('Git') {
             steps {
                 echo 'Pull code from github'
-                git url : 'https://github.com/anxgh-n/Book-project-authordetails.git',branch:'master'
+                git url : 'https://github.com/anxgh-n/Book-project-security.git',branch:'master'
             }
         }
         stage('Build') {
@@ -28,10 +28,10 @@ pipeline {
         stage('Deploy'){
             steps{
                 echo 'Deploy the project'
-                bat 'docker rm -f authordetails-container || true'
-                bat 'docker rmi -f authordetails-image || true'
-                bat 'docker build -t authordetails-image .'
-                bat 'docker run --network eurekabook-network -p 7074:7074 -d --name authordetails-container authordetails-image'
+                bat 'docker rm -f booksecurity-container || true'
+                bat 'docker rmi -f booksecurity-image || true'
+                bat 'docker build -t booksecurity-image .'
+                bat 'docker run --network eurekabook-network -p 7074:7074 -d --name booksecurity-container booksecurity-image'
             }
         }
     }
