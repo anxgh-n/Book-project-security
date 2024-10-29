@@ -1,7 +1,4 @@
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://eurekabook-container:8761/eureka/  # Adjust 'localhost' if the Eureka server is on another host
+
 
 spring:
   application:
@@ -10,9 +7,19 @@ spring:
     mongodb:
       uri: mongodb+srv://anagh11:anagh11@bookcluster.dl7kn.mongodb.net/?retryWrites=true&w=majority&appName=BookCluster
       database: bookdb
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eurekabook-container:8761/eureka/
+
 server:
   port: 7073
 
-
+logging:
+  level:
+    com.netflix.discovery: DEBUG
+    org.springframework.cloud.netflix.eureka: DEBUG
+#    org.springframework.security: DEBUG
 
 
