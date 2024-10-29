@@ -11,7 +11,7 @@ spring:
       uri: mongodb+srv://anagh11:anagh11@bookcluster.dl7kn.mongodb.net/?retryWrites=true&w=majority&appName=BookCluster
       database: bookdb
 server:
-  port: 7074
+  port: 7073
 
 
 

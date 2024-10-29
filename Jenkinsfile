@@ -31,7 +31,7 @@ pipeline {
                 bat 'docker rm -f booksecurity-container || true'
                 bat 'docker rmi -f booksecurity-image || true'
                 bat 'docker build -t booksecurity-image .'
-                bat 'docker run --network eurekabook-network -p 7074:7074 -d --name booksecurity-container booksecurity-image'
+                bat 'docker run --network eurekabook-network -p 7073:7073 -d --name booksecurity-container booksecurity-image'
             }
         }
     }
